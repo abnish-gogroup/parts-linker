@@ -1,0 +1,46 @@
+.main_container_parts_complaints {
+  background-color: #F1F5F8;
+  font-size: 12px;
+  width: auto;
+  height: 130vh;
+  margin-bottom: 10px;
+}
+
+.complaint_cont {
+  width: 100%;
+  border: 1px solid #8692a6;
+  background-color: #fff;
+  margin-top: 40px;
+  border-top: 1px solid #1e8ea5;
+}
+
+.complaint_supplier {
+  background-color: #1e8ea5;
+  color: #fff;
+  padding: 6px 12px;
+  text-transform: uppercase;
+}
+
+.address_delivery_cont {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  padding: 12px 18px;
+  align-items: baseline;
+}
+
+.complain_table_head {
+  display: flex;
+  background-color: #F0F0FF;
+  color: #A155B9;
+  text-transform: uppercase;
+  justify-content: space-between;
+  padding: 6px 12px;
+}
+
+.complain_table_body {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  align-items: center;
+}

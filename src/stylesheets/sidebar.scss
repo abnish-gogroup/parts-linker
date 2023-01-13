@@ -1,0 +1,75 @@
+@mixin sidebar_container {
+  background-color: #262626;
+  color: #ffffff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 30px;
+  right: auto;
+  min-height: 100%;
+  overflow-y: auto;
+  white-space: nowrap;
+  z-index: 1;
+  padding-left: 15px;
+
+  .navbar-header {
+    width: 100%;
+    margin-bottom: 10px;
+    color: #e4e4e4;
+    font-size: 12px;
+  }
+
+  .menu-item {
+    padding-right: 25px;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 12px;
+    text-decoration: none;
+    text-decoration-style: none;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.pdl_15 {
+  padding-left: 15px !important;
+}
+
+// .main_container_create_a_job {
+//   background-color: #fff;
+//   margin: 20px 0 20px 200px;
+//   font-size: 12px;
+//   width: 80%;
+// }
+
+.main_side_bar {
+  @include sidebar_container;
+  width: 200px;
+}
+
+.icon {
+  margin-right: 25px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.tool {
+  width: 14px;
+  margin-right: 18px;
+}
+
+.w_50 {
+  @include sidebar_container;
+  width: 50px;
+}
+
+.hide {
+  display: none;
+}
+
+// .collapsed { 
+//   width: calc(100% - 50px);
+//   max-width: calc(100% - 50px);
+//   margin-left: 50px;
+// }

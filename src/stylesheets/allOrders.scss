@@ -1,0 +1,150 @@
+.main_container_all_orders {
+  background-color: #F1F5F8;
+  font-size: 12px;
+  width: auto;
+  height: 130vh;
+  margin-bottom: 10px;
+}
+
+@mixin action_btn {
+  border: none;
+  padding: 1px 10px;
+  border-radius: 3px;
+}
+
+.view_btn {
+  @include action_btn;
+  background-color: #fff;
+  margin-right: 7px;
+  border: 1px solid #1e8ea5;
+  color: #1e8ea5;
+  &:hover {
+    background-color: #ced4df;
+  }
+}
+
+.complain_btn {
+  @include action_btn;
+  border: 1px solid #A155B9;
+  background-color: #A155B9;
+  color: #fff;
+  &:hover {
+    background-color: #581c6a;
+  }
+}
+
+.heading_cont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search_bar_cont {
+  position: relative;
+}
+
+.search_box {
+  width: 300px;
+  border: 1px solid #8692a6;
+  padding: 5px 30px;
+  font-size: 14px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.parts_row_class {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  color: #262626;
+  align-items: center;
+  height: 50px;
+}
+
+.parts_row_cont {
+  border-bottom: 1px solid #e9e9e9;
+  color: #262626;
+  background: #fff;
+  // padding: 10px;
+}
+
+.search_icon {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  color: #8692a6;
+}
+
+.order_table_head_cont {
+  display: flex;
+  border: 1px solid #1e8ea5;
+  padding: 10px 10px 10px 30px;
+  background-color: #1e8ea5;
+  color: #fff;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+ul.accordion-list-all-orders {
+  position: relative;
+  display: block;
+  width: 100%;
+  list-style: none;
+  background-color: transparent;
+  margin-bottom: 0 !important;
+  li {
+    position: relative;
+    display: block;
+    width: 103%;
+    height: auto;
+    background-color: #fff;
+    margin: 0 auto 0 -30px;
+    border-radius: 5px;
+    cursor: pointer;
+    &.active {
+      .angle_down_icon {
+        transform: rotate(-180deg);
+      }
+    }
+
+    div.all_order_answer {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      background-color: #fff;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+  }
+}
+
+.table_cont {
+  margin-top: 40px;
+  border: 1px solid #8692A6;
+  border-radius: 3px;
+}
+
+@mixin status {
+  color: #fff;
+  border-radius: 1000px;
+  padding: 2px 10px;
+}
+
+.deliver {
+  @include status;
+  border: 1p solid #16BFD6;
+  background-color: #16BFD6;
+}
+
+.complained {
+  @include status;
+  background-color: #DE626D;
+  border: 1px solid #DE626D;
+}
+
+.ordered {
+  @include status;
+  background-color: #8692A6;
+  border: 1px solid #8692A6;
+}

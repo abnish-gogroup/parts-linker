@@ -1,0 +1,134 @@
+.parts_checker_result_cont {
+  background-color: #f1f5f8;
+  height: 200vh;
+  width: auto;
+}
+
+.parts_checker_text, .parts_checker_heading {
+  // text-transform: capitalize;
+}
+
+.fs_30 {
+  font-size: 30px;
+}
+
+.mrt_40 {
+  margin-top: 40px;
+}
+
+.parts_checker_card {
+  width: 100%;
+  margin-top: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.parts_name {
+  color: #fff;
+  height: 40px;
+  border: 1px solid #1e8ea5;
+  background-color: #1e8ea5;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.parts_c_desc {
+  display: flex;
+  border-bottom: 1px solid #8692A6;
+  padding: 20px;
+  align-items: center;
+}
+
+.parts_c_model {
+  margin-right: 30px;
+}
+
+.number_plate_c {
+  font-weight: 600;
+  font-size: 12px;
+  padding-left: 34px;
+}
+
+.end_date_c {
+  font-weight: 600;
+  padding-left: 30px;
+}
+
+.order_input {
+  margin-left: 13px;
+  height: 19px;
+  padding: 5px;
+}
+
+.file_readable_data {
+  padding: 30px;
+}
+
+.file_readable_data > div {
+  padding: 10px 0;
+}
+
+.file_name {
+  color: #8692A6;
+  font-size: 12px;
+}
+
+.oe_numbers_cont {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.oe_numbers_cont > div {
+  border: 1px solid #1e8ea5;
+  background-color: #1e8ea5;
+  color: #fff;
+  border-radius: 3px;
+  padding: 3px 5px;
+  margin-right: 10px;
+}
+
+.check_all_parts {
+  border: 1px solid #A155B9;
+  background-color: #A155B9;
+  color: #fff;
+  font-size: 14px;
+  padding: 2px 10px;
+  border-radius: 3px;
+  // text-transform: capitalize;
+  &:hover {
+    background-color: #fff;
+    color: #A155B9;
+    border: 1px solid #A155B9;
+  }
+}
+
+.box-fileupload {
+  background: #1e8ea5;
+  border: 1px solid #a9e4f1;
+  border-radius: 3px;
+}
+
+.file-upload-input {
+  display: none;
+}
+
+.file_btn_class {
+  border: none;
+  padding: 0px;
+}
+
+label.file-upload-btn {
+  width: 26px;
+  height: 12px;
+  text-align: center;
+  background-size: cover;
+  background-position: center center;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+

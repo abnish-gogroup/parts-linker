@@ -1,0 +1,106 @@
+.loading-placeholder-container {
+  display: block;
+  .loading-text {
+    text-align: center;
+  }
+  .loading-placeholder-block-container,
+  .single-placeholder {
+    height: 123px;
+    overflow: hidden;
+    background: #000;
+    position: relative;
+    border: solid 1px #d9d9d9;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    animation-duration: 1.15s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: placeholderAnimate;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #f6f8fa 25%, #eee 50%, #f6f8fa 75%);
+    background-size: 500px;
+
+    .loading-placeholder-block-line {
+      position: absolute;
+      background: #fff;
+      z-index: 2;
+
+      &:after,
+      &:before {
+        width: inherit;
+        height: inherit;
+        content: '';
+        position: absolute;
+      }
+
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 21px;
+      }
+
+      &:nth-child(2) {
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 12px;
+      }
+
+      &:nth-child(3) {
+        top: 12px;
+        left: 50%;
+        right: 0;
+        height: 18px;
+      }
+
+      &:nth-child(4) {
+        left: 0;
+        right: 0;
+        top: 30px;
+        height: 8px;
+      }
+
+      &:nth-child(5) {
+        top: 38px;
+        right: 0;
+        left: 65%;
+        height: 18px;
+      }
+      &:nth-child(6) {
+        left: 0;
+        right: 0;
+        top: 56px;
+        height: 5px;
+      }
+      &:nth-child(7) {
+        top: 61px;
+        right: 0;
+        left: 80%;
+        height: 18px;
+      }
+
+      &:nth-child(8) {
+        left: 0;
+        right: 0;
+        top: 79px;
+        height: 5px;
+      }
+
+      &:nth-child(9) {
+        top: 84px;
+        right: 0;
+        left: 95%;
+        height: 18px;
+      }
+
+      &:nth-child(10) {
+        left: 0;
+        right: 0;
+        top: 102px;
+        height: 21px;
+      }
+    }
+  }
+}

@@ -1,0 +1,226 @@
+.main_dashboard_container {
+  background-color: #F1F5F8;
+  width: auto;
+  height: 100vh;
+  // text-transform: capitalize;
+}
+
+.h_150 {
+  height: 150vh !important;
+}
+
+.dashboard_text_cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fs_30 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.fs_12 {
+  font-size: 12px;
+}
+
+.pdt_10 {
+  padding-top: 10px;
+}
+
+.create_new_order_btn_cont {
+  background-color: #A155B9;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #A155B9;
+  text-align: center;
+  padding: 5px 20px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    color: #A155B9;
+    border: 1px solid #A155B9;
+    background-color: #fff;
+  }
+}
+
+.dashboard_order_status_cont {
+  padding-top: 44px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin order_deliver_box {
+  height: 126px;
+  width: 210px;
+  background-color: #fff;
+  padding: 30px 20px;
+}
+
+.order_in_delivery_cont {
+  @include order_deliver_box;
+  border-top: 2px solid #1E8EA5;
+}
+
+.parts_order_received_cont {
+  @include order_deliver_box;
+  border-top: 2px solid #A155B9;
+}
+
+.repair_complete_cont {
+  @include order_deliver_box;
+  border-top: 2px solid #16BFD6;
+}
+
+.complaints_cont {
+  @include order_deliver_box;
+  border-top: 2px solid #8692A6;
+}
+
+// navbar tab
+
+// #nav_tab .tab-content {
+//   color : white;
+//   padding : 5px 15px;
+// }
+
+// /* remove border radius for the tab */
+// #nav_tab {
+//   margin-left: 0 !important;
+//   padding-top: 24px;
+//   text-align: center;
+// }
+
+// #nav_tab .nav-pills > li > a {
+//   border-radius: 0;
+//   color: #262626;
+//   &:hover {
+//     text-decoration: none;
+//   }
+// }
+
+// #nav_tab .nav-pills > li.active {
+//   border-bottom: 2px solid #1E8EA5;
+// }
+
+// #nav_tab .nav-pills > li {
+//   padding: 5px 30px;
+//   text-align: center;
+//   margin-bottom: 20px;
+// }
+
+// // nav_tab_table_content
+
+// .nav_tab_table_head {
+//   background-color: #1E8EA5;
+//   color: #fff;
+//   text-transform: uppercase;
+//   font-size: 12px;
+//   font-weight: 600;
+//   letter-spacing: 0.7px;
+// }
+
+// new nav tab
+
+:root {
+  --bg: #301e4e;
+  --font-clr: #262626;
+  --headline: #ffffff;
+  --paragraph: #c9bae2;
+  --cardBG: #463366;
+  --cardText: #cabae2;
+  --activeColor: #1E8EA5;
+  --ff: 'Nunito', sans-serif;
+}
+
+.container {
+  max-width: auto;
+  margin: 40px 0;
+}
+
+.table_head_clr {
+  background-color: #1E8EA5 !important;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--headline);
+}
+
+.dashboard_t_body {
+  background-color: var(--headline);
+}
+
+.tabs__content {
+  padding: 30px;
+  color: var(--paragraph);
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  background: var(--headline);
+}
+
+.tabs__content h3 {
+  color: var(--font-clr);
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+
+.tabs__nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  // padding: 10px 0 30px;
+}
+
+.tabs__button {
+  background: rgba(0, 0, 0, 0);
+  padding: 4px;
+  color: #262626;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  position: relative;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+.tabs__button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--activeColor);
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s, opacity 0.4s ease-in-out;
+}
+
+.tabs__button.active::after {
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0s, opacity 0.4s ease-in-out;
+}
+
+
+.tabs__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.overview {
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+  border-bottom: 2px solid #1E8EA5;
+}

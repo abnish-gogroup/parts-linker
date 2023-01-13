@@ -1,0 +1,161 @@
+body {
+  background-color: #fff;
+  font-family: "Inter", sans-serif;
+}
+
+.logo {
+  margin-left: 54px;
+}
+
+.padt_85 {
+  padding-top: 85px;
+}
+
+.dfx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_container_login {
+  background-color: #fff;
+  font-size: 12px;
+  width: 100%;
+}
+
+// .top_border {
+//   border-top: 1px solid #e4e4e4;
+//   // width: 107%;
+// }
+
+.signin_desc {
+  color: #262626;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.dreg_flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.login_cont {
+  font-size: 16px;
+  color: #696f79;
+  text-align: center;
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.sign_in_cont {
+  text-align: center;
+  margin: 0 auto;
+  line-height: 28px;
+}
+
+.signin_txt {
+  font-weight: 700;
+}
+
+.star_class {
+  font-size: 8px;
+  padding-left: 4px;
+  vertical-align: super;
+  color: #1e8ea5;
+}
+
+.registration_form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.registration_form input {
+  border-radius: 6px;
+  border: 1px solid #8692a6;
+  width: 300px;
+}
+
+.input_box {
+  height: 40px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.form_label {
+  text-align: left;
+  margin: 10px 0;
+}
+
+.forgot_password {
+  padding: 15px 0 20px 0;
+}
+
+.radio_btn {
+  margin: 28px 8px 32px 0 !important;
+  width: 10px !important;
+  color: #1e8ea5;
+}
+
+.btn-primary {
+  width: 300px;
+  background-color: #1e8ea5 !important;
+  border-radius: 5px;
+  border: 1px solid #1e8ea5 !important;
+  color: #fff;
+  padding: 10px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background-color: white !important;
+  color: #1e8ea5 !important;
+}
+
+.l_line {
+  width: 300px;
+  text-align: center;
+  border-bottom: 1px solid #8692A6;
+  line-height: 2px;
+  margin: 30px auto;
+}
+
+.l_line small {
+  background: #fff;
+  padding: 0 10px;
+  color: #bababa;
+}
+
+.google_btn {
+  width: 300px;
+  border: none;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.google_logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.new_user {
+  margin-top: 35px;
+  font-size: 12px;
+  text-align: center;
+}
