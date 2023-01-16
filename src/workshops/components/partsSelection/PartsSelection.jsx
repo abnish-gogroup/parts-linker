@@ -8,21 +8,24 @@ import PartsSelectionCardExpand from './PartsSelectionCardExpand';
 
 function PartsSelection(props){
   const { expanded } = props; 
-  const [showProfileDD, setShowProfileDD] = useState(false);
+  const [fontWeight, setFontWeight] = useState(false);
  
   useEffect(() => {
     $(".checkedBox").click(function(e){
       e.stopPropagation();
   })
     $(document).ready(function () {
+      
       $('.accordion-list-parts-selection > li > .parts_answer').hide();
       $('.accordion-list-parts-selection > li').on('click', function () {
         if ($(this).hasClass("active")) {
           $(this).removeClass("active").find(".parts_answer").slideUp();
         } else {
           $(".accordion-list-parts-selection > li.active .parts_answer").slideUp();
+          $(".accordion-list-parts-selection > li.active").removeClass("fw_600");
           $(".accordion-list-parts-selection > li.active").removeClass("active");
-          $(this).addClass("active").find(".parts_answer").slideDown();
+          $(this).addClass("active").find(".parts_answer").slideDown(); 
+          // $(".accordion-list-parts-selection > li.active").addClass("fw_600");
         }
         return false;
       });
@@ -33,10 +36,6 @@ function PartsSelection(props){
   //   // e.stopPropagation();
  
   // }
-
-  const handleHideDD=()=>{
-    setShowProfileDD(true);
-  }
 
   const goToCheckoutPage =()=>{
     window.history.pushState({}, '', '/checkout');
@@ -71,25 +70,10 @@ function PartsSelection(props){
   <div className="part_number_details">
     <div className="part_no_head">
       <div className='w_5'></div>
-      <div className='w_20'>Teilenummer</div>
       <div className='w_20'>Beschreibung</div>
-      <div className='w_17'>Hersteller</div>
-      <div className='w_20'>Vorgeschlagen Durch: </div>
-      <div className='dropdown w_17'>
-          <div className='dropbtn cp' onClick={handleHideDD}>Günstigster Preis <FontAwesomeIcon icon={faAngleDown} /></div>
-          <div className={showProfileDD ? 'dropdown-content' : 'dn'} >
-              <div className='ddc cp'>
-              <FontAwesomeIcon icon={faCheck} className='pdl_10' /><span className='pdl_5'> Günstigster Preis</span>
-              </div>
-              <div className='ddc cp pdl_35'>
-              Schnellste Lieferung
-              </div>
-              <div className='ddc cp pdl_35'>
-              Günstigster Preis zur gewünschten Lieferung
-              </div>
-              <div className='ddc cp pdl_35'>HUK Vorgabe</div>
-          </div>
-        </div>
+      <div className='w_17'>OEM</div>
+      <div className='w_20'>OES</div>
+      <div className='w_20'>IAM</div>
     </div>
 
     <ul className="accordion-list-parts-selection">
@@ -101,11 +85,10 @@ function PartsSelection(props){
                   <FontAwesomeIcon icon={faAngleDown} className='angle_down_ico' />
                 </div>
               </div>
-              <div className='w_20'><div className='oe_align_cont'><div>6Y0807221E</div><input type="checkbox" name='oe_1' value='6Y0807221E' className='checkedBox pdr_35' defaultChecked /></div></div>
               <div className='w_20'>Stoßstange Vorne</div>
               <div className='w_17 pdl_10'>Skoda</div>
               <div className='w_20'></div>
-              <div className='w_17'></div>
+              <div className='w_17'><input type="checkbox" name='ima1' value='ima1' className='checkedBox mrgl_20' defaultChecked /></div>
             </div>
           </div>
         </li>
@@ -118,10 +101,9 @@ function PartsSelection(props){
                   <FontAwesomeIcon icon={faAngleDown} className='angle_down_ico' />
                 </div>
               </div>
-              <div className='w_20'><div className='oe_align_cont'><div>6Y0853661 739</div><input type="checkbox" className='checkedBox pdr_35' defaultChecked /></div></div>
               <div className='w_20'>Blende Gitter Motorhaube</div>
               <div className='w_17 pdl_10'>Skoda</div>
-              <div className='w_20'></div>
+              <div className='w_20'><input type="checkbox" className='checkedBox mrgl_20' defaultChecked /></div>
               <div className='w_17'></div>
             </div>
           </div>
@@ -135,11 +117,10 @@ function PartsSelection(props){
                   <FontAwesomeIcon icon={faAngleDown} className='angle_down_ico' />
                 </div>
               </div>
-              <div className='w_20'><div className='oe_align_cont'><div>6Y0853668B</div><input type="checkbox" className='checkedBox pdr_35' defaultChecked /></div></div>
               <div className='w_20'>Gitter Motorhaube</div>
               <div className='w_17 pdl_10'>Skoda</div>
-              <div className='w_20'></div>
-              <div className='w_17'></div>
+              <div className='w_20'><input type="checkbox" className='checkedBox mrgl_20' defaultChecked /></div>
+              <div className='w_17'><input type="checkbox" className='checkedBox mrgl_20' defaultChecked /></div>
             </div>
           </div>
         </li>
@@ -152,10 +133,9 @@ function PartsSelection(props){
                   <FontAwesomeIcon icon={faAngleDown} className='angle_down_ico' />
                 </div>
               </div>
-              <div className='w_20'><div className='oe_align_cont'><div>6Y0853678GRU</div><input type="checkbox" className='checkedBox pdr_35' defaultChecked /></div></div>
               <div className='w_20'>Rahmen Gitter Motorhaube</div>
               <div className='w_17 pdl_10'>Skoda</div>
-              <div className='w_20'></div>
+              <div className='w_20'><input type="checkbox" className='checkedBox mrgl_20' defaultChecked /></div>
               <div className='w_17'></div>
             </div>
           </div>
@@ -172,11 +152,10 @@ function PartsSelection(props){
                   <FontAwesomeIcon icon={faAngleDown} className='angle_down_ico' />
                 </div>
               </div>
-              <div className='w_20'><div className='oe_align_cont'><div>1U0853621C MEL</div> <input type="checkbox" className='checkedBox pdr_35' defaultChecked /></div></div>
-              <div className='w_20'>Emblem</div>
+              <div className= 'w_20'>Emblem</div>
               <div className='w_17 pdl_10'>Skoda</div>
-              <div className='w_20'></div>
-              <div className='w_17'></div>
+              <div className='w_20'><input type="checkbox" className='checkedBox mrgl_20' defaultChecked /></div>
+              <div className='w_17'><input type="checkbox" className='checkedBox mrgl_20' defaultChecked /></div>
             </div>
           </div>
           <div className="parts_answer">

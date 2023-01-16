@@ -39,50 +39,50 @@ function PartsSelectionCardExpand(props) {
   return (
     <div className='parts_expand_cont'>
       <div className='parts_expand_cont_head'>
-      <div className='w_5'></div>
-        <div className='w_25'>Lieferant</div>
-        <div className='w_14'>Lieferzeit</div>
+        <div className='w_14'>HERSTELLER</div>
+        <div className='w_14'>Lieferant</div>
+        <div className='w_10'>Lieferzeit</div>
         <div className='w_7'>Typ</div>
-        <div className='w_7'>UVP</div>
+        <div className='w_10'>UVP</div>
         <div className='w_10'>Rabatt</div>
-        <div className='w_10'>Angebot</div>
-        <div className='w_12'>Lieferkosten</div>
+        <div className='w_12'>Angebot</div>
+        <div className='w_14'>Lieferkosten</div>
         <div className='w_7'></div>
       </div>
       <div className='parts_bidding_desc'>
-        <div className='w_5'></div>
-        <div className='w_25'>NORA Zentrum Wolfsburg</div>
-        <div className='w_14'>2 Tage</div>
-        <div className='w_7'>OEM</div>
-        <div className='w_7'>€12.25</div>
-        <div className='w_10'>9%</div>
-        <div className='w_10'>€11.2</div>
-        <div className='w_12'>€0</div>
-        <div className='w_5 radio_content'><input name='parts_selection' type='radio' value='rd_1' defaultChecked /><label className='pdl_10 showChooseText1'>Auswählen</label></div>
+        <div className='w_14'>Hella</div>
+        <div className='w_14'>Stahlgruber</div>
+        <div className='w_10'>2 Tage</div>
+        <div className='w_7'>OES</div>
+        <div className='w_10'>€70.50</div>
+        <div className='w_10'>37%</div>
+        <div className='w_12'>€44.41</div>
+        <div className='w_14'>€00.00</div>
+        <div className='w_7 radio_content'><input name='parts_selection' type='radio' value='rd_1' defaultChecked /><label className='pdl_10 showChooseText1'>Auswählen</label></div>
       </div>
     
       <div className='parts_bidding_desc'>
-        <div className='w_5'></div>
-        <div className='w_25'>VW Mayr</div>
-        <div className='w_14'>4 Tage</div>
-        <div className='w_7'>OEM</div>
-        <div className='w_7'>€12.25</div>
-        <div className='w_10'>10%</div>
-        <div className='w_10'>€12.25</div>
-        <div className='w_12'>€5</div>
-        <div className='w_5 radio_content'><input name='parts_selection' type='radio'  value='rd_2' /><label className='pdl_10 showChooseText2'>Auswählen</label></div>
+        <div className='w_14'>Bosch</div>
+        <div className='w_14'>Stahlgruber</div>
+        <div className='w_10'>2 Tage</div>
+        <div className='w_7'>OES</div>
+        <div className='w_10'>€70.50</div>
+        <div className='w_10'>37%</div>
+        <div className='w_12'>€44.41</div>
+        <div className='w_14'>€00.00</div>
+        <div className='w_7 radio_content'><input name='parts_selection' type='radio'  value='rd_2' /><label className='pdl_10 showChooseText2'>Auswählen</label></div>
       </div>
 
       <div className='parts_bidding_desc'>
-        <div className='w_5'></div>
-        <div className='w_25'>Brass Gruppe</div>
-        <div className='w_14'>2 Tage</div>
-        <div className='w_7'>OEM</div>
-        <div className='w_7'>€12.25</div>
-        <div className='w_10'>15%</div>
-        <div className='w_10'>€10.41</div>
-        <div className='w_12'>€0</div>
-        <div className='w_5 radio_content'><input name='parts_selection' type='radio'  value='rd_3' /><label className='pdl_10 showChooseText3'>Auswählen</label></div>
+        <div className='w_14'>Skoda</div>
+        <div className='w_14'>Nora Zentrum</div>
+        <div className='w_10'>1 Tage</div>
+        <div className='w_7'>OES</div>
+        <div className='w_10'>€70.50</div>
+        <div className='w_10'>37%</div>
+        <div className='w_12'>€44.41</div>
+        <div className='w_14'>€00.00</div>
+        <div className='w_7 radio_content'><input name='parts_selection' type='radio'  value='rd_3' /><label className='pdl_10 showChooseText3'>Auswählen</label></div>
       </div>
     </div>
   )
