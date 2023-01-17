@@ -258,3 +258,25 @@ ul.accordion-list-parts-selection {
   justify-content: space-between;
   padding: 0 30px 0 0;
 }
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #1e8ea5;
+  border-radius: 2px;
+  background-color: #fff;
+  margin-left: 15px;
+  margin-right: 15px;
+  &:checked{
+    background-repeat: no-repeat;
+    background-color: #1e8ea5;
+    background-image: url('http://static-assets-goparts.s3.amazonaws.com/static-images/checkbox_icon.png');
+    background-size: 14px;
+  }
+  &:focus{
+      outline: none !important;
+  }
+}
