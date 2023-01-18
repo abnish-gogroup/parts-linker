@@ -30,20 +30,18 @@ function SearchModal(props) {
             <div className='parts_manuftr'>
               <div className='text_l'>Teilelieferant</div>
               <select disabled className='maufacture_dd'>
-                <option value='oem/oes'>OEM / OES / IAM </option>
-                <option>OEM </option>
-                <option>OEM & OES</option>
-                <option>OES & IAM</option>
+                <option value='premium'>Premium</option>
+                <option value='original'>Original</option>
               </select>
             </div>
 
             <div className='parts_manuftr'>
               <div className='text_l'>Ergebnis basiert auf</div>
               <select disabled className='maufacture_dd'>
-                <option value='oem/oes'>OEM / OES / IAM </option>
-                <option value='oem'>OEM </option>
-                <option value='oes'>OEM & OES</option>
-                <option value='ima'>OES & IAM</option>
+                <option value='cheapest_price'>Günstigste Preis</option>
+                <option value='fastest_delivery'>Schnellste Lieferung</option>
+                <option value='best_price'>Günstigste Preis zur Gewünschten Lieferung</option>
+                <option value='invidual_specification'>Individuelle Vorgabe</option>
               </select>
             </div>
           </div>

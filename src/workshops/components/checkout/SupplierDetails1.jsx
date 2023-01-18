@@ -88,25 +88,25 @@ function SupplierDetails1(props) {
           />
 
           <SupplierDetailsCard 
-            partNumber='6Y0853661 739'
-            manufacturer='Skoda'
+            partNumber='1 987 946 024'
+            manufacturer='Bosch'
             description='Blende Gitter Motorhaube'
-            partType='OEM'
+            partType='OES'
             number= '1'
-            margin='€89.60'
-            deliveryPrice='18%'
-            price='€73.47'
+            margin='€70.50'
+            deliveryPrice='37%'
+            price='€44.41'
           />
 
           <SupplierDetailsCard 
-            partNumber='6Y0853678GRU'
-            manufacturer='Skoda'
+            partNumber='1ZX 013 377-141'
+            manufacturer='Hella'
             description='Rahmen Gitter Motorhaube'
-            partType='OEM'
+            partType='OES'
             number= '1'
-            margin='€31.70'
-            deliveryPrice='25%'
-            price='€24.01'
+            margin='€28.50'
+            deliveryPrice='40%'
+            price='€17.10'
           />
         </div>
       </div>

@@ -1,40 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../../stylesheets/dashboardDropdown.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faPaperclip, faBars } from '@fortawesome/free-solid-svg-icons';
 import $ from 'jquery';
 
 function PartsSelectionCardExpand(props) {
-  const { jobId, jobs, model, licencePlateId, completionDate, noOfParts } = props;
-  
-  useEffect(()=>{
+  const { setIsAvailableForBlende } = props;
+
+  useEffect(() => {
     $(function () {
-      $('.showChooseText1').show();
-      $('.showChooseText2').hide();
-      $('.showChooseText3').hide();
-  
       $("input[name=parts_selection]:radio").on('click', function (e) {
-          if ($('input[name=parts_selection]:checked').val() === "rd_1") {
-            e.stopPropagation();
-            $('.showChooseText1').show();
-            $('.showChooseText2').hide();
-            $('.showChooseText3').hide();
-  
-          } else if ($('input[name=parts_selection]:checked').val() === "rd_2") {
-            e.stopPropagation();
-            $('.showChooseText1').hide();
-            $('.showChooseText2').show();
-            $('.showChooseText3').hide();
-          }
-          else if ($('input[name=parts_selection]:checked').val() === "rd_3") {
-            e.stopPropagation();
-            $('.showChooseText1').hide();
-            $('.showChooseText2').hide();
-            $('.showChooseText3').show();
-          }
+        if ($('input[name=parts_selection]:checked').val() === "rd_1") {
+          e.stopPropagation();
+          console.log('e.target1', e.target.value);
+          setIsAvailableForBlende({ isOEM: true, isOES: false })
+        } else if ($('input[name=parts_selection]:checked').val() === "rd_2") {
+          e.stopPropagation();
+          console.log('e.target2', e.target.value);
+          setIsAvailableForBlende({ isOEM: false, isOES: true })
+        }
+        else if ($('input[name=parts_selection]:checked').val() === "rd_3") {
+          e.stopPropagation();
+          console.log('e.target3', e.target.value);
+          setIsAvailableForBlende({ isOEM: false, isOES: true })
+        }
       });
-  });
-  },[])
+    });
+  }, [])
 
   return (
     <div className='parts_expand_cont'>
@@ -50,39 +40,39 @@ function PartsSelectionCardExpand(props) {
         <div className='w_7'></div>
       </div>
       <div className='parts_bidding_desc'>
-        <div className='w_14'>Hella</div>
-        <div className='w_14'>Stahlgruber</div>
+        <div className='w_14'>Skoda</div>
+        <div className='w_14'>nicht verfügbar</div>
         <div className='w_10'>2 Tage</div>
-        <div className='w_7'>OES</div>
-        <div className='w_10'>€70.50</div>
-        <div className='w_10'>37%</div>
-        <div className='w_12'>€44.41</div>
-        <div className='w_14'>€00.00</div>
-        <div className='w_7 radio_content'><input name='parts_selection' type='radio' value='rd_1' defaultChecked /><label className='pdl_10 showChooseText1'>Auswählen</label></div>
-      </div>
-    
-      <div className='parts_bidding_desc'>
-        <div className='w_14'>Bosch</div>
-        <div className='w_14'>Stahlgruber</div>
-        <div className='w_10'>2 Tage</div>
-        <div className='w_7'>OES</div>
-        <div className='w_10'>€70.50</div>
-        <div className='w_10'>37%</div>
-        <div className='w_12'>€44.41</div>
-        <div className='w_14'>€00.00</div>
-        <div className='w_7 radio_content'><input name='parts_selection' type='radio'  value='rd_2' /><label className='pdl_10 showChooseText2'>Auswählen</label></div>
+        <div className='w_7'>OEM</div>
+        <div className='w_10'>€31.70</div>
+        <div className='w_10'>25%</div>
+        <div className='w_12'>€24.01</div>
+        <div className='w_14'>€0</div>
+        <div className='w_7 radio_content'><input name='parts_selection' type='radio' value='rd_1' /><label className='pdl_10 showChooseText1'>Auswählen</label></div>
       </div>
 
       <div className='parts_bidding_desc'>
-        <div className='w_14'>Skoda</div>
-        <div className='w_14'>Nora Zentrum</div>
-        <div className='w_10'>1 Tage</div>
+        <div className='w_14'>Bosch</div>
+        <div className='w_14'>Stahlgruber</div>
+        <div className='w_10'>3 Tage</div>
         <div className='w_7'>OES</div>
-        <div className='w_10'>€70.50</div>
-        <div className='w_10'>37%</div>
-        <div className='w_12'>€44.41</div>
-        <div className='w_14'>€00.00</div>
-        <div className='w_7 radio_content'><input name='parts_selection' type='radio'  value='rd_3' /><label className='pdl_10 showChooseText3'>Auswählen</label></div>
+        <div className='w_10'>€26.70</div>
+        <div className='w_10'>35%</div>
+        <div className='w_12'>€17.35</div>
+        <div className='w_14'>€0</div>
+        <div className='w_7 radio_content'><input name='parts_selection' type='radio' value='rd_2' /><label className='pdl_10 showChooseText2'>Auswählen</label></div>
+      </div>
+
+      <div className='parts_bidding_desc'>
+        <div className='w_14'>Hella</div>
+        <div className='w_14'>WM SE</div>
+        <div className='w_10'>2 Tage</div>
+        <div className='w_7'>OES</div>
+        <div className='w_10'>€28.50</div>
+        <div className='w_10'>40%</div>
+        <div className='w_12'>€17.10</div>
+        <div className='w_14'>€0</div>
+        <div className='w_7 radio_content'><input name='parts_selection' type='radio' value='rd_3' /><label className='pdl_10 showChooseText3'>Auswählen</label></div>
       </div>
     </div>
   )
