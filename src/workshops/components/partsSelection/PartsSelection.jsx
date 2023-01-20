@@ -8,8 +8,6 @@ import PartsSelectionCardExpand from './PartsSelectionCardExpand';
 
 function PartsSelection(props) {
   const { expanded } = props;
-  const [rahmenBold, setRahmenBold] = useState(false);
-  const [blendeBold, setBlendeBold] = useState(false);
   const [isAvailableForRahmen, setIsAvailableForRahmen] = useState({ isOEM: false, isOES: false });
   const [isAvailableForBlende, setIsAvailableForBlende] = useState({ isOEM: false, isOES: false });
 
@@ -19,13 +17,10 @@ function PartsSelection(props) {
     })
     $(document).ready(function (e) {
       $('.accordion-list-parts-selection > li > .parts_answer').hide();
-      // $(this).removeClass('fw_600');
       $('.accordion-list-parts-selection > li').on('click', function (e) {
         e.stopPropagation();
-        // setBoldText(e.target.innerText || e.target.nodeName);
         if ($(this).hasClass("active")) {
           $(this).removeClass("active").find(".parts_answer").slideUp();
-          // setBoldText('nothing');
           $(this).find('.descript').removeClass('fw_600');
         } else {
           $(".accordion-list-parts-selection > li.active .parts_answer").slideUp();
@@ -38,26 +33,6 @@ function PartsSelection(props) {
       });
     });
   }, [])
-
-  const setBoldText =(text) =>{
-    console.log('text ', text,  text.includes('Rahmen' || 'svg'))
-    if(text.includes('svg')){
-      if(text.includes('Rahmen')){
-        setRahmenBold(true); 
-      }
-    }
-    else {
-      setRahmenBold(false);
-    }
-    if(text.includes('svg')){
-      if(text.includes('Blende')){
-        setBlendeBold(true);
-      }
-    } 
-    else {
-      setBlendeBold(false);
-    }
-  }
 
   const checkingForRhmenAvailable = () => {
     if (isAvailableForRahmen.isOEM || isAvailableForRahmen.isOES) {
@@ -195,7 +170,7 @@ function PartsSelection(props) {
                     <FontAwesomeIcon icon={faAngleDown} className='angle_down_ico' />
                   </div>
                 </div>
-                <div className={ rahmenBold ? 'descript fw_600 w_20' : 'descript w_20'}>Rahmen Gitter Motorhaube</div>
+                <div className={'descript w_20'}>Rahmen Gitter Motorhaube</div>
                 <div className={textAlignment(isAvailableForRahmen.isOEM)}>{(isAvailableForRahmen.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForRhmenAvailable()}</div>
                 <div className={textAlignment(isAvailableForRahmen.isOES)}>{(isAvailableForRahmen.isOES) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForRhmenAvailable()}</div>
                 <div className={textAlignment(isAvailableForRahmen.isOEM || isAvailableForRahmen.isOES)}>{(isAvailableForRahmen.isOEM || isAvailableForRahmen.isOES) ? '' : checkingForRhmenNotAvailable()}</div>
@@ -216,7 +191,7 @@ function PartsSelection(props) {
                     <FontAwesomeIcon icon={faAngleDown} className='angle_down_ico' />
                   </div>
                 </div>
-                <div className={ blendeBold ? 'descript fw_600 w_20' : 'descript w_20'}>Blende Gitter Motorhaube</div>
+                <div className={'descript w_20'}>Blende Gitter Motorhaube</div>
                 <div className={textAlignment(isAvailableForBlende.isOEM)}>{(isAvailableForBlende.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForBlendeAvailable()}</div>
                 <div className={textAlignment(isAvailableForBlende.isOES)}>{(isAvailableForBlende.isOES) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForBlendeAvailable()}</div>
                 <div className={textAlignment(isAvailableForBlende.isOEM || isAvailableForBlende.isOES)}>{(isAvailableForBlende.isOEM || isAvailableForBlende.isOES) ? '' : checkingForBlendeNotAvailable()}</div>
