@@ -14,9 +14,6 @@ function PartsSelection(props) {
   const [isAvailableForBlende, setIsAvailableForBlende] = useState({ isOEM: false, isOES: false });
 
   useEffect(() => {
-    $(".checkedBox").click(function (e) {
-      e.stopPropagation();
-    })
     $(".parts_answer").click(function (e) {
       e.stopPropagation();
     })
@@ -24,9 +21,10 @@ function PartsSelection(props) {
       $('.accordion-list-parts-selection > li > .parts_answer').hide();
       $('.accordion-list-parts-selection > li').on('click', function (e) {
         e.stopPropagation();
-        setBoldText(e.target.innerText);
+        setBoldText(e.target.innerText || e.target.nodeName);
         if ($(this).hasClass("active")) {
           $(this).removeClass("active").find(".parts_answer").slideUp();
+          setBoldText('nothing');
         } else {
           $(".accordion-list-parts-selection > li.active .parts_answer").slideUp();
           $(".accordion-list-parts-selection > li.active").removeClass("active");
@@ -38,13 +36,13 @@ function PartsSelection(props) {
   }, [])
 
   const setBoldText =(text) =>{
-    if(text.includes('Rahmen')){
+    if(text.includes('Rahmen' || 'svg')){
       setRahmenBold(true); 
     }
     else {
       setRahmenBold(false);
     }
-    if(text.includes('Blende')){
+    if(text.includes('Blende' || 'svg')){
       setBlendeBold(true);
     }
     else {
@@ -84,6 +82,15 @@ function PartsSelection(props) {
       return 'nicht verfügbar';
   }
 
+  const textAlignment=(available)=>{
+    if(available){
+      return 'w_20'
+    }
+    else {
+      return 'w_20 pdl_15'
+    }
+  }
+
   const goToCheckoutPage = () => {
     window.history.pushState({}, '', '/checkout');
     window.location.reload();
@@ -117,7 +124,7 @@ function PartsSelection(props) {
         <div className="part_no_head">
           <div className='w_5'></div>
           <div className='w_20'>Beschreibung</div>
-          <div className='w_17'>OEM</div>
+          <div className='w_20'>OEM</div>
           <div className='w_20'>OES</div>
           <div className='w_20'>IAM</div>
         </div>
@@ -132,7 +139,7 @@ function PartsSelection(props) {
                   </div>
                 </div>
                 <div className='w_20'>Stoßstange Vorne</div>
-                <div className='w_17'><span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span></div>
+                <div className='w_20'><span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span></div>
                 <div className='w_20'></div>
                 <div className='w_20'></div>
               </div>
@@ -148,9 +155,9 @@ function PartsSelection(props) {
                   </div>
                 </div>
                 <div className='w_20'>Emblem</div>
-                <div className='w_17 pdl_10'></div>
+                <div className='w_20 pdl_10'></div>
                 <div className='w_20'><span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span></div>
-                <div className='w_17'></div>
+                <div className='w_20'></div>
               </div>
             </div>
           </li>
@@ -164,9 +171,9 @@ function PartsSelection(props) {
                   </div>
                 </div>
                 <div className='w_20'>Gitter Motorhaube</div>
-                <div className='w_17 pdl_10'></div>
+                <div className='w_20 pdl_10'></div>
                 <div className='w_20'><span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span></div>
-                <div className='w_17'></div>
+                <div className='w_20'></div>
               </div>
             </div>
           </li>
@@ -180,9 +187,9 @@ function PartsSelection(props) {
                   </div>
                 </div>
                 <div className={ rahmenBold ? 'fw_600 w_20' : 'w_20'}>Rahmen Gitter Motorhaube</div>
-                <div className='w_17 pdl_10'>{(isAvailableForRahmen.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} />ausgewählt</span> : checkingForRhmenAvailable()}</div>
-                <div className='w_20'>{(isAvailableForRahmen.isOES) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} />ausgewählt</span> : checkingForRhmenAvailable()}</div>
-                <div className='w_17'>{(isAvailableForRahmen.isOEM || isAvailableForRahmen.isOES) ? '' : checkingForRhmenNotAvailable()}</div>
+                <div className={textAlignment(isAvailableForRahmen.isOEM)}>{(isAvailableForRahmen.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} />ausgewählt</span> : checkingForRhmenAvailable()}</div>
+                <div className={textAlignment(isAvailableForRahmen.isOES)}>{(isAvailableForRahmen.isOES) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} />ausgewählt</span> : checkingForRhmenAvailable()}</div>
+                <div className={textAlignment(isAvailableForRahmen.isOEM || isAvailableForRahmen.isOES)}>{(isAvailableForRahmen.isOEM || isAvailableForRahmen.isOES) ? '' : checkingForRhmenNotAvailable()}</div>
               </div>
             </div>
             <div className="parts_answer">
@@ -201,9 +208,9 @@ function PartsSelection(props) {
                   </div>
                 </div>
                 <div className={ blendeBold ? 'fw_600 w_20' : 'w_20'}>Blende Gitter Motorhaube</div>
-                <div className='w_17 pdl_10'>{(isAvailableForBlende.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} />ausgewählt</span> : checkingForBlendeAvailable()}</div>
-                <div className='w_20'>{(isAvailableForBlende.isOES) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForBlendeAvailable()}</div>
-                <div className='w_17'>{(isAvailableForBlende.isOEM || isAvailableForBlende.isOES) ? '' : checkingForBlendeNotAvailable()}</div>
+                <div className={textAlignment(isAvailableForBlende.isOEM)}>{(isAvailableForBlende.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} />ausgewählt</span> : checkingForBlendeAvailable()}</div>
+                <div className={textAlignment(isAvailableForBlende.isOES)}>{(isAvailableForBlende.isOES) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForBlendeAvailable()}</div>
+                <div className={textAlignment(isAvailableForBlende.isOEM || isAvailableForBlende.isOES)}>{(isAvailableForBlende.isOEM || isAvailableForBlende.isOES) ? '' : checkingForBlendeNotAvailable()}</div>
               </div>
             </div>
             <div className="parts_answer">

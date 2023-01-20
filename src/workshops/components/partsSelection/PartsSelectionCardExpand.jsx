@@ -41,7 +41,7 @@ function PartsSelectionCardExpand(props) {
       </div>
       <div className='parts_bidding_desc'>
         <div className='w_14'>Skoda</div>
-        <div className='w_14'>nicht verfügbar</div>
+        <div className='w_14'>Nora Zentrum Wolfsburg</div>
         <div className='w_10'>2 Tage</div>
         <div className='w_7'>OEM</div>
         <div className='w_10'>€31.70</div>

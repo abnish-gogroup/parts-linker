@@ -59,7 +59,7 @@ function Sidebar(props) {
 						<ul className='nav navbar-nav'>
 							<li className="menu-item" onClick={goToDashboard}><FontAwesomeIcon icon={faDashboard} className='icon' />Dashboard</li>
 							<li className="menu-item" onClick={goToCreateJob}><FontAwesomeIcon icon={faList} className='icon' />Aufträge</li>
-							<li className="menu-item" onClick={goToAllOrders}><FontAwesomeIcon icon={faGear} className='icon' />Einstellungen</li>
+							<li className="menu-item"><FontAwesomeIcon icon={faGear} className='icon' />Einstellungen</li>
 						</ul>}
 					</div>
 				</nav>

@@ -42,8 +42,8 @@ function PartsSelectionCard(props) {
         <div className='w_10'>2 Tage</div>
         <div className='w_7'>OEM</div>
         <div className='w_10'>€89.60</div>
-        <div className='w_10'>35%</div>
-        <div className='w_12'>€17.35</div>
+        <div className='w_10'>18%</div>
+        <div className='w_12'>€73.47</div>
         <div className='w_14'>€0</div>
         <div className='w_7 radio_content'><input name='parts_2_selection' type='radio' value='rd_4' /><label className='pdl_10 showChooseText4'>Auswählen</label></div>
       </div>
@@ -63,7 +63,7 @@ function PartsSelectionCard(props) {
       <div className='parts_bidding_desc'>
         <div className='w_14'>Hella</div>
         <div className='w_14'>WM SE</div>
-        <div className='w_10'>1 Tage</div>
+        <div className='w_10'>1 Tag</div>
         <div className='w_7'>OES</div>
         <div className='w_10'>€81.34</div>
         <div className='w_10'>28%</div>

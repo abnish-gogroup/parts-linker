@@ -93,9 +93,9 @@ function SupplierDetails1(props) {
             description='Blende Gitter Motorhaube'
             partType='OES'
             number= '1'
-            margin='€70.50'
-            deliveryPrice='37%'
-            price='€44.41'
+            margin='€26.70'
+            deliveryPrice='35%'
+            price='€17.35'
           />
 
           <SupplierDetailsCard 
@@ -104,9 +104,9 @@ function SupplierDetails1(props) {
             description='Rahmen Gitter Motorhaube'
             partType='OES'
             number= '1'
-            margin='€28.50'
-            deliveryPrice='40%'
-            price='€17.10'
+            margin='€81.34'
+            deliveryPrice='28%'
+            price='€58.56'
           />
         </div>
       </div>
