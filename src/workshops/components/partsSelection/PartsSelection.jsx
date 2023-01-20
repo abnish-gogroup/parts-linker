@@ -29,8 +29,8 @@ function PartsSelection(props) {
           $(this).find('.descript').removeClass('fw_600');
         } else {
           $(".accordion-list-parts-selection > li.active .parts_answer").slideUp();
+          $('.accordion-list-parts-selection > li').find('.descript').removeClass("fw_600");  
           $(".accordion-list-parts-selection > li.active").removeClass("active"); 
-          $('.accordion-list-parts-selection > li.active').find('.descript').removeClass("fw_600"); 
           $(this).addClass("active").find(".parts_answer").slideDown();         
           $(this).find('.descript').addClass('fw_600');  
         }
@@ -196,8 +196,8 @@ function PartsSelection(props) {
                   </div>
                 </div>
                 <div className={ rahmenBold ? 'descript fw_600 w_20' : 'descript w_20'}>Rahmen Gitter Motorhaube</div>
-                <div className={textAlignment(isAvailableForRahmen.isOEM)}>{(isAvailableForRahmen.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} />ausgewählt</span> : checkingForRhmenAvailable()}</div>
-                <div className={textAlignment(isAvailableForRahmen.isOES)}>{(isAvailableForRahmen.isOES) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} />ausgewählt</span> : checkingForRhmenAvailable()}</div>
+                <div className={textAlignment(isAvailableForRahmen.isOEM)}>{(isAvailableForRahmen.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForRhmenAvailable()}</div>
+                <div className={textAlignment(isAvailableForRahmen.isOES)}>{(isAvailableForRahmen.isOES) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForRhmenAvailable()}</div>
                 <div className={textAlignment(isAvailableForRahmen.isOEM || isAvailableForRahmen.isOES)}>{(isAvailableForRahmen.isOEM || isAvailableForRahmen.isOES) ? '' : checkingForRhmenNotAvailable()}</div>
               </div>
             </div>
@@ -217,7 +217,7 @@ function PartsSelection(props) {
                   </div>
                 </div>
                 <div className={ blendeBold ? 'descript fw_600 w_20' : 'descript w_20'}>Blende Gitter Motorhaube</div>
-                <div className={textAlignment(isAvailableForBlende.isOEM)}>{(isAvailableForBlende.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} />ausgewählt</span> : checkingForBlendeAvailable()}</div>
+                <div className={textAlignment(isAvailableForBlende.isOEM)}>{(isAvailableForBlende.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForBlendeAvailable()}</div>
                 <div className={textAlignment(isAvailableForBlende.isOES)}>{(isAvailableForBlende.isOES) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForBlendeAvailable()}</div>
                 <div className={textAlignment(isAvailableForBlende.isOEM || isAvailableForBlende.isOES)}>{(isAvailableForBlende.isOEM || isAvailableForBlende.isOES) ? '' : checkingForBlendeNotAvailable()}</div>
               </div>
