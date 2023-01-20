@@ -19,16 +19,20 @@ function PartsSelection(props) {
     })
     $(document).ready(function (e) {
       $('.accordion-list-parts-selection > li > .parts_answer').hide();
+      // $(this).removeClass('fw_600');
       $('.accordion-list-parts-selection > li').on('click', function (e) {
         e.stopPropagation();
-        setBoldText(e.target.innerText || e.target.nodeName);
+        // setBoldText(e.target.innerText || e.target.nodeName);
         if ($(this).hasClass("active")) {
           $(this).removeClass("active").find(".parts_answer").slideUp();
-          setBoldText('nothing');
+          // setBoldText('nothing');
+          $(this).find('.descript').removeClass('fw_600');
         } else {
           $(".accordion-list-parts-selection > li.active .parts_answer").slideUp();
-          $(".accordion-list-parts-selection > li.active").removeClass("active");
-          $(this).addClass("active").find(".parts_answer").slideDown();
+          $(".accordion-list-parts-selection > li.active").removeClass("active"); 
+          $('.accordion-list-parts-selection > li.active').find('.descript').removeClass("fw_600"); 
+          $(this).addClass("active").find(".parts_answer").slideDown();         
+          $(this).find('.descript').addClass('fw_600');  
         }
         return false;
       });
@@ -36,15 +40,20 @@ function PartsSelection(props) {
   }, [])
 
   const setBoldText =(text) =>{
-    if(text.includes('Rahmen' || 'svg')){
-      setRahmenBold(true); 
+    console.log('text ', text,  text.includes('Rahmen' || 'svg'))
+    if(text.includes('svg')){
+      if(text.includes('Rahmen')){
+        setRahmenBold(true); 
+      }
     }
     else {
       setRahmenBold(false);
     }
-    if(text.includes('Blende' || 'svg')){
-      setBlendeBold(true);
-    }
+    if(text.includes('svg')){
+      if(text.includes('Blende')){
+        setBlendeBold(true);
+      }
+    } 
     else {
       setBlendeBold(false);
     }
@@ -186,7 +195,7 @@ function PartsSelection(props) {
                     <FontAwesomeIcon icon={faAngleDown} className='angle_down_ico' />
                   </div>
                 </div>
-                <div className={ rahmenBold ? 'fw_600 w_20' : 'w_20'}>Rahmen Gitter Motorhaube</div>
+                <div className={ rahmenBold ? 'descript fw_600 w_20' : 'descript w_20'}>Rahmen Gitter Motorhaube</div>
                 <div className={textAlignment(isAvailableForRahmen.isOEM)}>{(isAvailableForRahmen.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} />ausgewählt</span> : checkingForRhmenAvailable()}</div>
                 <div className={textAlignment(isAvailableForRahmen.isOES)}>{(isAvailableForRahmen.isOES) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} />ausgewählt</span> : checkingForRhmenAvailable()}</div>
                 <div className={textAlignment(isAvailableForRahmen.isOEM || isAvailableForRahmen.isOES)}>{(isAvailableForRahmen.isOEM || isAvailableForRahmen.isOES) ? '' : checkingForRhmenNotAvailable()}</div>
@@ -207,7 +216,7 @@ function PartsSelection(props) {
                     <FontAwesomeIcon icon={faAngleDown} className='angle_down_ico' />
                   </div>
                 </div>
-                <div className={ blendeBold ? 'fw_600 w_20' : 'w_20'}>Blende Gitter Motorhaube</div>
+                <div className={ blendeBold ? 'descript fw_600 w_20' : 'descript w_20'}>Blende Gitter Motorhaube</div>
                 <div className={textAlignment(isAvailableForBlende.isOEM)}>{(isAvailableForBlende.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} />ausgewählt</span> : checkingForBlendeAvailable()}</div>
                 <div className={textAlignment(isAvailableForBlende.isOES)}>{(isAvailableForBlende.isOES) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForBlendeAvailable()}</div>
                 <div className={textAlignment(isAvailableForBlende.isOEM || isAvailableForBlende.isOES)}>{(isAvailableForBlende.isOEM || isAvailableForBlende.isOES) ? '' : checkingForBlendeNotAvailable()}</div>
