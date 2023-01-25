@@ -1,16 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../stylesheets/commonStyles.scss';
 import '../../stylesheets/login.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 function Login() {
+  const [userCred, setUserCred] = useState({ userName: '', password: '' });
+  const [isEye, setIsEye] = useState(false);
+  const [isError, setIsError] = useState({ userName: false, password: false });
+  const userLoginDetails = { userName: 'ashish', password: '123456' };
+
   let url = '/dashboard';
   const handleSignin = (e) => {
     e.preventDefault();
-    window.history && window.history.pushState({}, '', url);
-    window.location.reload();
+    if (userLoginDetails.userName === userCred.userName && userLoginDetails.password === userCred.password) {
+      window.history && window.history.pushState({}, '', url);
+      window.location.reload();
+    }
+    else if (userLoginDetails.userName === userCred.userName && userLoginDetails.password !== userCred.password) {
+      setIsError({ ...isError, password: true })
+    }
+    else if (userLoginDetails.userName !== userCred.userName && userLoginDetails.password === userCred.password) {
+      setIsError({ ...isError, userName: true })
+    }
+    else {
+      setIsError({ userName: true, password: true });
+    }
   };
+
+  const handleChange = (e) => {
+    setIsError(false);
+    setUserCred({ ...userCred, [e.target.name]: e.target.value })
+  }
+
+  const handleTogglePassword = () => {
+    setIsEye(!isEye);
+  }
 
   // const goToRegistrationPage = () => {
   //   window.history && window.history.pushState({}, '', '/registration');
@@ -39,11 +64,23 @@ function Login() {
         <form className='registration_form cb_262626 fs_14'>
           <div className='dreg_flex'>
             <label className='form_label fs_16 fw_500'>Email-Adresse</label>
-            <input className='input_box' />
+            <input className={isError.userName ? 'border_red input_box' : 'input_box'}
+              name='userName'
+              value={userCred.userName}
+              onChange={handleChange}
+            />
           </div>
           <div className='dreg_flex fs_16 fw_500'>
             <label className='form_label'>Passwort</label>
-            <input className='input_box' />
+            <div className='dfx'>
+              <input className={isError.password ? 'border_red input_box prl' : 'input_box prl'}
+                type={isEye ? 'text' : 'password'}
+                name='password'
+                value={userCred.password}
+                onChange={handleChange}
+              />
+              {isEye ? <FontAwesomeIcon icon={faEye} onClick={handleTogglePassword} className='eye_style' /> : <FontAwesomeIcon icon={faEyeSlash} onClick={handleTogglePassword} className='eye_style' />}
+            </div>
           </div>
           <small
             className='forgot_password cp fs_12 theme_clr'

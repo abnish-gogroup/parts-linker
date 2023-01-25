@@ -152,6 +152,10 @@
   border-top: 1px solid #e9e9e9 !important;
 }
 
+.border_red {
+  border: 1px solid red !important;
+}
+
 .pdl_30 {
   padding-left: 30px !important;
 }
@@ -209,4 +213,15 @@
 
 .bg_fafaff {
   background-color: #FAFAFF !important;
+}
+
+.prl {
+  position: relative;
+}
+
+.eye_style {
+  position: absolute;
+  margin-left: 260px;
+  padding-bottom: 10px;
+  color: #c4c4c4;
 }
