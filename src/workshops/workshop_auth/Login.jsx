@@ -8,7 +8,7 @@ function Login() {
   const [userCred, setUserCred] = useState({ userName: '', password: '' });
   const [isEye, setIsEye] = useState(false);
   const [isError, setIsError] = useState({ userName: false, password: false });
-  const userLoginDetails = { userName: 'ashish', password: '123456' };
+  const userLoginDetails = { userName: 'goparts', password: 'goparts@543' };
 
   let url = '/dashboard';
   const handleSignin = (e) => {
