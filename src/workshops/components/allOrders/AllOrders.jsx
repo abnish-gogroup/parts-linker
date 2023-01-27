@@ -4,9 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import $ from 'jquery';
 import AllOrdersCard from './AllOrdersCard';
+import { useNavigate } from 'react-router-dom';
 
 function AllOrders(props) {
   const { expanded } = props;
+  const navigate = useNavigate();
 
   useEffect(() => {
     $(".complain_btn").click(function(e){
@@ -29,8 +31,7 @@ function AllOrders(props) {
   }, [])
  
   const goToComplaintsPage = () => {
-    window.history.pushState({}, '', '/parts-complaints');
-    window.location.reload();
+    navigate('/parts-complaints');
   }
 
   return (

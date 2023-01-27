@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../../stylesheets/createAJob.scss';
 import Sidebar from '../../../common/Sidebar';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,20 +9,19 @@ import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 function CreateAJob(props) {
   const { expanded, setExpanded } = props;
   const [isAltAddress, setIsAltAddress] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(()=>{
     window.scrollTo(0, 0);
   },[])
 
   const goToJobSearchPage = () => {
-    window.history.pushState({}, '', '/checkout');
-    window.location.reload();
+    navigate('/checkout');
       window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   const goToUploadPartsChecker=()=>{
-    window.history.pushState({}, '', '/upload-files');
-    window.location.reload();
+    navigate('/upload-files');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 

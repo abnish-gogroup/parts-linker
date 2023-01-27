@@ -1,25 +1,15 @@
 import React from 'react';
 import '../../../stylesheets/commonStyles.scss';
 import '../../../stylesheets/login.scss';
+import { useNavigate } from 'react-router-dom';
 
 function InsuranceLogin() {
   let url = '/insurance-dashboard';
+  const navigate = useNavigate();
   const handleSignin = (e) => {
     e.preventDefault();
-    window.history && window.history.pushState({}, '', url);
-    window.location.reload();
+    navigate('/insurance-dashboard')
   };
-
-  // const goToRegistrationPage = () => {
-  //   window.history && window.history.pushState({}, '', '/registration');
-  //   window.location.reload();
-  // };
-
-  // const goToForgotPassword = () => {
-  //   window.history.pushState({}, '', '/forgot-password');
-  //   window.location.reload();
-  // };
-
   return (
     <div className='main_container_login'>
       <div className='txt_c padt_85 dfx'>
@@ -45,7 +35,6 @@ function InsuranceLogin() {
           </div>
           <small
             className='forgot_password cp fs_12 theme_clr'
-          // onClick={goToForgotPassword}
           >
             Passwort vergessen?
           </small>

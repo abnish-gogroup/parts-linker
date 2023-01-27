@@ -3,15 +3,17 @@ import '../../../stylesheets/checkout.scss';
 import SupplierDetails1 from './SupplierDetails1';
 import SupplierDetails2 from './SupplerDetails2';
 import TopContainer from './TopContainer';
+import { useNavigate } from 'react-router-dom';
 
 function Checkout(props) {
   const { expanded } = props;
+  const navigate = useNavigate();
+
   useEffect(()=>{
     window.scrollTo(0, 0);
   })
   const goToThankYouPage = () => {
-    window.history.pushState({}, '', '/thank-you-order');
-    window.location.reload();
+    navigate('/thank-you-order');
   }
 
   return (

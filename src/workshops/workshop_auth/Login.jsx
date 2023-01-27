@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../stylesheets/commonStyles.scss';
 import '../../stylesheets/login.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,13 +10,19 @@ function Login() {
   const [isEye, setIsEye] = useState(false);
   const [isError, setIsError] = useState({ userName: false, password: false });
   const userLoginDetails = { userName: 'goparts', password: 'goparts@543' };
+  const navigate = useNavigate();
 
-  let url = '/dashboard';
+  useEffect(() => {
+    if (localStorage.getItem('loginDetails')) {
+      navigate('/dashboard');
+    }
+  }, []);
+
   const handleSignin = (e) => {
     e.preventDefault();
     if (userLoginDetails.userName === userCred.userName && userLoginDetails.password === userCred.password) {
-      window.history && window.history.pushState({}, '', url);
-      window.location.reload();
+      window.localStorage.setItem('loginDetails', true);
+      navigate('/dashboard');
     }
     else if (userLoginDetails.userName === userCred.userName && userLoginDetails.password !== userCred.password) {
       setIsError({ ...isError, password: true })
@@ -36,16 +43,6 @@ function Login() {
   const handleTogglePassword = () => {
     setIsEye(!isEye);
   }
-
-  // const goToRegistrationPage = () => {
-  //   window.history && window.history.pushState({}, '', '/registration');
-  //   window.location.reload();
-  // };
-
-  // const goToForgotPassword = () => {
-  //   window.history.pushState({}, '', '/forgot-password');
-  //   window.location.reload();
-  // };
 
   return (
     <div className='main_container_login'>
@@ -83,9 +80,7 @@ function Login() {
             </div>
           </div>
           <small
-            className='forgot_password cp fs_12 theme_clr'
-          // onClick={goToForgotPassword}
-          >
+            className='forgot_password cp fs_12 theme_clr'>
             Passwort vergessen?
           </small>
           <div className='mt-1'>

@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import partsResultTableData from '../../constants/partsResultTableData';
 import '../../../stylesheets/partsResultTable.scss';
 import SearchModal from './SearchModal';
+import { useNavigate } from 'react-router-dom';
 
 function PartsResultTable() {
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
+
   const handleModal = () => {
     setShowModal(!showModal);
   }
 
   const goToPartsSelection = () => {
-    window.history.pushState({}, '', '/parts-selection');
-    window.location.reload();
+    navigate('/parts-selection');
   }
 
   return (

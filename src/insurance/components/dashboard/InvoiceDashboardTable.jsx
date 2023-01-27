@@ -1,12 +1,13 @@
 import React from 'react';
 import OrderSummaryBox from './OrderSummaryBox';
+import { useNavigate } from 'react-router-dom';
 
 function InvoiceDashboardTable(props) {
   const { insuranceData } = props;
+  const navigate = useNavigate();
 
   const goToOrderProcessScreen = () => {
-    window.history.pushState({}, '', '/insurance-order-process');
-    window.location.reload();
+    navigate('/insurance-order-process');
   }
 
   return (

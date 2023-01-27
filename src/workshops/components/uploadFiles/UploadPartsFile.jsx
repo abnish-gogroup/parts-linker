@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import '../../../stylesheets/uploadPartsFile.scss';
-import PartsResultLoader from '../../../common/PartsResultsLoader';
+import { useNavigate } from 'react-router-dom';
 import '../../../stylesheets/Loaders.scss';
 import Loader from '../Loader';
 
 function UploadPartsFile(props){
   const { expanded } = props;
   const [ showLoader, setShowLoader ] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(()=>{
     handleFileNameChange();
@@ -31,8 +32,7 @@ function UploadPartsFile(props){
 
   const closeLoaderIn5Seconds = () => 
       setTimeout(() => {
-        window.history.pushState({}, '', '/parts-checker');
-        window.location.reload();
+        navigate('/parts-checker');
         setShowLoader(false);
       }, 5000);
 

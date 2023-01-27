@@ -5,6 +5,7 @@ import { faFile, faUpload, faCloudArrowUp } from '@fortawesome/free-solid-svg-ic
 import PartsResultTable from './PartsResultTable';
 import Loader from '../Loader';
 import PartsResultLoader from '../../../common/PartsResultsLoader';
+import { useNavigate } from 'react-router-dom';
 
 function PartsChecker(props) { 
   const { expanded } = props;
@@ -15,13 +16,12 @@ function PartsChecker(props) {
   const [orderValue, setOrderValue] = useState('');
   const [showTableLoader, setShowTableLoader] = useState(false);
   const [spinner, setSpinner] = useState(false);
-
+  const navigate = useNavigate();
   const handleCheckAllParts=async()=>{
     setSpinner(true);
     setShowTableLoader(true);
     closeLoaderIn5Seconds();
-    // window.history.pushState({}, '', '/parts-checker');
-    // window.location.reload();
+    navigate('/parts-checker');
   }
 
 const closeLoaderIn5Seconds = () => 
@@ -29,13 +29,8 @@ const closeLoaderIn5Seconds = () =>
       setSpinner(false);
       setShowTableLoader(false);
       setShowResultTable(true);
-      // window.history.pushState({}, '', '/parts-checker');
-      // window.location.reload();
+      navigate('/parts-checker');
     }, 5000);
-
-  // const handleClick = (e) => {
-	// 	hiddenFileInput.current.click();
-	// }
 
   const handleChange = (event) => {
     console.log('upload file')

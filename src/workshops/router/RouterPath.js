@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import CreateAJob from '../components/createAJob/CreateAJob';
-// import OePaperReadout from '../oePaperReadout/OePaperReadout';
 import Login from '../workshop_auth/Login';
-import { Provider } from 'react-redux';
 import Dashboard from '../components/dashboard/Dashboard';
-import Sidebar from '../../common/Sidebar';
 import ThankYouOrder from '../components/thankYou/ThankYouOrder';
 import Checkout from '../components/checkout/Checkout';
 import OrderOverview from '../components/orderOverview/OrderOverview';
@@ -17,63 +14,28 @@ import PartsComplain from '../components/partsComplain/PartsComplain';
 import InsuranceLogin from '../../insurance/components/login/InsuranceLogin';
 import InsuranceDashboard from '../../insurance/components/dashboard/InsuranceDashboard';
 import OrderProcess from '../../insurance/components/orderProcess/OrderProcess';
+import ProtectedRoute from './ProtectedRoute';
+import PageNotFound from './PageNotFound';
 
-export default function RouterPath() { 
-  const [expanded, setExpanded] = useState(true);
-  
-  const location = window.location.pathname;
-  const handleToggleSidebar=()=>{
-    setExpanded(!expanded);
-  }
-
+export default function RouterPath() {
 
   return (
-    <BrowserRouter>
-      {(location === '/' || location === '/signin') ? '' : <Sidebar expanded={ expanded } handleToggleSidebar={handleToggleSidebar} />}
-      <Switch>
-        <Route exact path="/">
-          <Login />
-        </Route>
-        <Route path='/dashboard'>
-          <Dashboard expanded ={expanded} setExpanded={setExpanded} />
-        </Route>
-        <Route path='/create-a-job'>
-          <CreateAJob expanded ={expanded} setExpanded={setExpanded} />
-        </Route>
-        <Route path='/upload-files'>
-          <UploadPartsFile expanded ={expanded} />
-        </Route>
-        <Route path='/parts-checker'>
-          <PartsChecker expanded ={expanded} />
-        </Route>
-        <Route path='/parts-selection'>
-          <PartsSelection expanded ={expanded} />
-        </Route>
-        <Route path='/checkout'>
-          <Checkout expanded ={expanded} />
-        </Route>
-        <Route path='/thank-you-order'>
-          <ThankYouOrder expanded ={expanded} />
-        </Route>
-        <Route path='/order-overview'>
-          <OrderOverview expanded ={expanded} />
-        </Route>
-        <Route path='/all-orders'>
-          <AllOrders expanded ={expanded} />
-        </Route>
-        <Route path='/parts-complaints'>
-          <PartsComplain expanded ={expanded} />
-        </Route>
-        <Route path='/insurance-login'>
-          <InsuranceLogin expanded ={expanded} />
-        </Route>
-        <Route path='/insurance-dashboard'>
-          <InsuranceDashboard expanded={expanded} />
-        </Route>
-        <Route path='/insurance-order-process'>
-          <OrderProcess expanded={expanded} />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+    <Routes>
+      <Route exact path="/" element={<Login />} />
+      <Route path='/dashboard' element={<ProtectedRoute Component={Dashboard} />} />
+      <Route path='/create-a-job' element={<ProtectedRoute Component={CreateAJob} />} />
+      <Route path='/upload-files' element={<ProtectedRoute Component={UploadPartsFile} />} />
+      <Route path='/parts-checker' element={<ProtectedRoute Component={PartsChecker} />} />
+      <Route path='/parts-selection' element={<ProtectedRoute Component={PartsSelection} />} />
+      <Route path='/checkout' element={<ProtectedRoute Component={Checkout} />} />
+      <Route path='/thank-you-order' element={<ProtectedRoute Component={ThankYouOrder} />} />
+      <Route path='/order-overview' element={<ProtectedRoute Component={OrderOverview} />} />
+      <Route path='/all-orders' element={<ProtectedRoute Component={AllOrders} />} />
+      <Route path='/parts-complaints' element={<ProtectedRoute Component={PartsComplain} />} />
+      <Route path='/insurance-login' element={<ProtectedRoute Component={InsuranceLogin} />} />
+      <Route path='/insurance-dashboard' element={<ProtectedRoute Component={InsuranceDashboard} />} />
+      <Route path='/insurance-order-process' element={<ProtectedRoute Component={OrderProcess} />} />
+      <Route path='*' element={<PageNotFound />} />
+    </Routes>
   )
 }

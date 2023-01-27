@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import '../../../stylesheets/dashboard.scss';
 import Tabs from './Tabs';
 import { tabContent } from '../../constants/tabContent';
+import { useNavigate } from 'react-router-dom';
 
 function Dashboard(props) {
   const { expanded, setExpanded } = props;
+  const navigation = useNavigate();
   const handleCreateANewOrder = () => {
-    window.history.pushState({}, '', '/create-a-job');
-    window.location.reload();
+    navigation('/create-a-job');
   }
 
   return ( 

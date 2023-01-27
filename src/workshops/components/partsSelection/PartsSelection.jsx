@@ -5,11 +5,13 @@ import PartsSelectionCard from './PartsSelectionCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faCheck } from '@fortawesome/free-solid-svg-icons';
 import PartsSelectionCardExpand from './PartsSelectionCardExpand';
+import { useNavigate } from 'react-router-dom';
 
 function PartsSelection(props) {
   const { expanded } = props;
   const [isAvailableForRahmen, setIsAvailableForRahmen] = useState({ isOEM: false, isOES: false });
   const [isAvailableForBlende, setIsAvailableForBlende] = useState({ isOEM: false, isOES: false });
+  const navigate = useNavigate();
 
   useEffect(() => {
     $(".parts_answer").click(function (e) {
@@ -76,8 +78,7 @@ function PartsSelection(props) {
   }
 
   const goToCheckoutPage = () => {
-    window.history.pushState({}, '', '/checkout');
-    window.location.reload();
+    navigate('/checkout')
   }
 
   return (
