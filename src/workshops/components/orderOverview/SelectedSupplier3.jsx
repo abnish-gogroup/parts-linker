@@ -46,7 +46,7 @@ function SelectedSupplier3(props) {
             </div>
           </div>
           <div className="col_262626 p_left fs_14 w_30 fw_600">
-            Kommentar an den Lieferante (Optional)
+            Kommentar an den Lieferanten (Optional)
             <div className='clr_6e7178 fs_14 fw_400 fsi'>Vielen Dank im Voraus!</div>
           </div>
         </div>

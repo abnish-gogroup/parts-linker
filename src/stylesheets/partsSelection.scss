@@ -178,10 +178,14 @@ ul.accordion-list-parts-selection {
   color: #1e8ea5;
 }
 
-
 .dropdown {
   position: relative;
   display: inline-block;
+}
+
+.flx_dd {
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-content {

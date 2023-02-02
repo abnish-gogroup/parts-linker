@@ -11,6 +11,8 @@ function PartsSelection(props) {
   const { expanded } = props;
   const [isAvailableForRahmen, setIsAvailableForRahmen] = useState({ isOEM: false, isOES: false });
   const [isAvailableForBlende, setIsAvailableForBlende] = useState({ isOEM: false, isOES: false });
+  const [showDD, setShowDD] = useState(false);
+  const [ddSelectContent, setDDSelectContent] = useState('Günstigster Preis');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,7 +30,7 @@ function PartsSelection(props) {
           $(".accordion-list-parts-selection > li.active .parts_answer").slideUp();
           $('.accordion-list-parts-selection > li').find('.descript').removeClass("fw_600");  
           $(".accordion-list-parts-selection > li.active").removeClass("active"); 
-          $(this).addClass("active").find(".parts_answer").slideDown();         
+          $(this).addClass("active").find(".parts_answer").slideDown();           
           $(this).find('.descript').addClass('fw_600');  
         }
         return false;
@@ -70,11 +72,20 @@ function PartsSelection(props) {
 
   const textAlignment=(available)=>{
     if(available){
-      return 'w_20'
+      return 'w_10'
     }
     else {
-      return 'w_20 pdl_15'
+      return 'w_10 pdl_15'
     }
+  }
+
+  const handleHideDD = () => {
+    setShowDD(!showDD);
+  }
+
+  const handleSetSelectDD=(options)=>{
+    setDDSelectContent(options);
+    handleHideDD();
   }
 
   const goToCheckoutPage = () => {
@@ -109,9 +120,24 @@ function PartsSelection(props) {
         <div className="part_no_head">
           <div className='w_5'></div>
           <div className='w_20'>Beschreibung</div>
-          <div className='w_20'>OEM</div>
-          <div className='w_20'>OES</div>
-          <div className='w_20'>IAM</div>
+          <div className='w_10'>OEM</div>
+          <div className='w_10'>OES</div>
+          <div className='w_10'>IAM</div>
+          <div className='w_20'>Vorgeschlagen Durch: </div>
+          <div className='dropdown w_25'>
+            <div className='dropbtn cp flx_dd' onClick={handleHideDD}>{ddSelectContent} <FontAwesomeIcon icon={faAngleDown} className='pdl_10' /></div>
+            <div className={showDD ? 'dropdown-content' : 'dn'}>
+              <div className='ddc cp' onClick={()=>handleSetSelectDD('Günstigster Preis')}>
+                <FontAwesomeIcon icon={faCheck} className='pdl_10' /><span className='pdl_5'>Günstigster Preis</span>
+              </div>
+              <div className='ddc cp pdl_35' onClick={()=>handleSetSelectDD('Schnellste Lieferung')}>
+                Schnellste Lieferung
+              </div>
+              <div className='ddc cp pdl_35' onClick={()=>handleSetSelectDD('Günstigster Preis zur gewünschten Lieferung')}>
+                Günstigster Preis zur gewünschten Lieferung
+              </div>
+            </div>
+          </div>
         </div>
 
         <ul className="accordion-list-parts-selection">
@@ -124,9 +150,11 @@ function PartsSelection(props) {
                   </div>
                 </div>
                 <div className='w_20'>Stoßstange Vorne</div>
-                <div className='w_20'><span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span></div>
+                <div className='w_10'><span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span></div>
+                <div className='w_10'></div>
+                <div className='w_10'></div>
                 <div className='w_20'></div>
-                <div className='w_20'></div>
+                <div className='w_25'></div>
               </div>
             </div>
           </li>
@@ -140,9 +168,11 @@ function PartsSelection(props) {
                   </div>
                 </div>
                 <div className='w_20'>Emblem</div>
-                <div className='w_20'><span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span></div>
+                <div className='w_10'><span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span></div>
+                <div className='w_10'></div>
+                <div className='w_10'></div>
                 <div className='w_20'></div>
-                <div className='w_20'></div>
+                <div className='w_25'></div>
               </div>
             </div>
           </li>
@@ -156,9 +186,11 @@ function PartsSelection(props) {
                   </div>
                 </div>
                 <div className='w_20'>Gitter Motorhaube</div>
-                <div className='w_20'><span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span></div>
+                <div className='w_10'><span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span></div>
+                <div className='w_10'></div>
+                <div className='w_10'></div>
                 <div className='w_20'></div>
-                <div className='w_20'></div>
+                <div className='w_25'></div>
               </div>
             </div>
           </li>
@@ -175,6 +207,8 @@ function PartsSelection(props) {
                 <div className={textAlignment(isAvailableForRahmen.isOEM)}>{(isAvailableForRahmen.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForRhmenAvailable()}</div>
                 <div className={textAlignment(isAvailableForRahmen.isOES)}>{(isAvailableForRahmen.isOES) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForRhmenAvailable()}</div>
                 <div className={textAlignment(isAvailableForRahmen.isOEM || isAvailableForRahmen.isOES)}>{(isAvailableForRahmen.isOEM || isAvailableForRahmen.isOES) ? '' : checkingForRhmenNotAvailable()}</div>
+                <div className='w_20'></div>
+                <div className='w_25'></div>
               </div>
             </div>
             <div className="parts_answer">
@@ -196,6 +230,8 @@ function PartsSelection(props) {
                 <div className={textAlignment(isAvailableForBlende.isOEM)}>{(isAvailableForBlende.isOEM) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForBlendeAvailable()}</div>
                 <div className={textAlignment(isAvailableForBlende.isOES)}>{(isAvailableForBlende.isOES) ? <span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span> : checkingForBlendeAvailable()}</div>
                 <div className={textAlignment(isAvailableForBlende.isOEM || isAvailableForBlende.isOES)}>{(isAvailableForBlende.isOEM || isAvailableForBlende.isOES) ? '' : checkingForBlendeNotAvailable()}</div>
+                <div className='w_20'></div>
+                <div className='w_25'></div>
               </div>
             </div>
             <div className="parts_answer">
@@ -205,7 +241,6 @@ function PartsSelection(props) {
             </div>
           </li>
         </ul>
-
       </div>
     </div>
   )
