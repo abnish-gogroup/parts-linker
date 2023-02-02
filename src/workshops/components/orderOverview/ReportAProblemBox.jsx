@@ -21,7 +21,7 @@ function ReportAProblemBox() {
         </div>
         <div className='total_price_cont fw_600'>
           <div>Gesamt Preis</div>
-          <div className='fs_12'>€269.94</div>
+          <div className='fs_12'>€248.12</div>
         </div>
         <div className='delivery_addr_cont'>
           <div className='fw_600'>Lieferadresse:</div>

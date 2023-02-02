@@ -54,7 +54,7 @@ function PartsSelectionCardExpand(props) {
       <div className='parts_bidding_desc'>
         <div className='w_14'>Bosch</div>
         <div className='w_14'>Stahlgruber</div>
-        <div className='w_10'>3 Tage</div>
+        <div className='w_10'>2 Tage</div>
         <div className='w_7'>OES</div>
         <div className='w_10'>€26.70</div>
         <div className='w_10'>35%</div>

@@ -7,27 +7,29 @@ import SupplierDetailsCard from './SupplierDetailsCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 
-function SupplierDetails1(props) {
-  const { supplierName, suppAddsName, supplierCity, supplierPhoneNo, supplierEmail, radioBtnName, radioBtnTime } = props;
+function SupplierDetails3(props) {
+  const { supplierName, suppAddsName, supplierCity, supplierPhoneNo, supplierEmail, radioBtnName } = props;
   const [startDate, setStartDate] = useState(null);
-  return ( 
+  return (
     <div className='supplier_cont'>
       <div className="supplier_card">
         <div className="supplier_txt">{supplierName}</div>
         <div className="address_details_cont">
-          <div className="w_330 mrt_20">
+          <div className="w_330">
             <div className="col_262626 fw_600">Kontakt:</div>
-            <div className=" fb_1">
+            <div className="pt_10 fb_1">
               {suppAddsName}
               <br></br>
-              <div className="fb_1">
+            </div>
+            <div className="fb_1">
               {supplierCity}
               <br></br>
-              </div>
-              <div className="fb_1">
+            </div>
+            <div className="fb_1">
               {supplierPhoneNo}
               <br></br>
-              </div>
+            </div>
+            <div className="fb_1">
               <span className='supp_email'>{supplierEmail}</span>
             </div>
           </div>
@@ -77,28 +79,6 @@ function SupplierDetails1(props) {
           </div>
           
           <SupplierDetailsCard 
-            partNumber='6Y0807221E'
-            manufacturer='Skoda'
-            description='Stoßstange Vorne'
-            partType='OEM'
-            number= '1'
-            margin='€167.50'
-            deliveryPrice='18%'
-            price='€137.35'
-          />
-
-          {/* <SupplierDetailsCard 
-            partNumber='1 987 946 024'
-            manufacturer='Bosch'
-            description='Blende Gitter Motorhaube'
-            partType='OES'
-            number= '1'
-            margin='€26.70'
-            deliveryPrice='35%'
-            price='€17.35'
-          /> */}
-
-          {/* <SupplierDetailsCard 
             partNumber='1ZX 013 377-141'
             manufacturer='Hella'
             description='Rahmen Gitter Motorhaube'
@@ -107,11 +87,22 @@ function SupplierDetails1(props) {
             margin='€81.34'
             deliveryPrice='28%'
             price='€58.56'
-          /> */}
+          />
+
+          <SupplierDetailsCard 
+            partNumber='1 ZX97 946-024'
+            manufacturer='Hella'
+            description='Blende Gitter Motorhaube'
+            partType='OES'
+            number= '1'
+            margin='€28.50'
+            deliveryPrice='40%'
+            price='€17.10'
+          />
         </div>
       </div>
     </div>
   )
 }
 
-export default SupplierDetails1;
+export default SupplierDetails3;

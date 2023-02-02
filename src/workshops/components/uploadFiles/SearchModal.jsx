@@ -4,17 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 
 function SearchModal(props) {
-  const { showModal, close, goToPartsSelection } = props;
+  const { showModal, handleModal, goToPartsSelection } = props;
   return showModal ? (
     <>
-      <div className='prompt-add-reference-holder'
+      <div className='prompt-add-reference-holder' 
         onClick={() => {
-          close();
+          handleModal();
         }}>
         <div className="prompt-confirmation" onClick={e => {
           e.stopPropagation();
         }}>
-          <button onClick={close} className='close_icon'><FontAwesomeIcon icon={faClose} /></button>
+          <button onClick={handleModal} className='close_icon'><FontAwesomeIcon icon={faClose} /></button>
           <div className='modal_text'>Suchkriterien</div>
           <div className='manu_cont'>
             <div className='parts_manuftr'>

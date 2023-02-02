@@ -140,8 +140,8 @@ function PartsSelection(props) {
                   </div>
                 </div>
                 <div className='w_20'>Emblem</div>
-                <div className='w_20 pdl_10'></div>
                 <div className='w_20'><span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span></div>
+                <div className='w_20'></div>
                 <div className='w_20'></div>
               </div>
             </div>
@@ -156,8 +156,8 @@ function PartsSelection(props) {
                   </div>
                 </div>
                 <div className='w_20'>Gitter Motorhaube</div>
-                <div className='w_20 pdl_10'></div>
                 <div className='w_20'><span className='theme_clr'><FontAwesomeIcon icon={faCheck} /> ausgewählt</span></div>
+                <div className='w_20'></div>
                 <div className='w_20'></div>
               </div>
             </div>

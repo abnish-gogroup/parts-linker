@@ -37,15 +37,19 @@ function ThankYouOrder(props) {
         <div>
           <div className="thank_you_text fos_18 pd_bottom">Bestellübersicht</div>
           <div className='hz_line'></div>
-          <div className='fs_14 pd_top'>5 Teile von 2 Lieferanten</div>
+          <div className='fs_12 pd_top pd_bottom'>5 Teile von 3 Lieferanten</div>
           <div className="supplier_details fs_14">
             <div className="supp_desc">
-              <div className="w_300">NORA Zentrum Wolfsburg<span className='flr'>(3 Teile)</span></div>
-              <div>€234.83</div>
+              <div className="w_300">NORA Zentrum Wolfsburg<span className='flr'>(1 Teile)</span></div>
+              <div>€137.35</div>
             </div>
             <div className="supp_desc">
               <div className="w_300">Brass Gruppe<span className='flr'>(2 Teile)</span></div>
               <div>€35.11</div>
+            </div>
+            <div className="supp_desc">
+              <div className="w_300">WM SE<span className='flr'>(2 Teile)</span></div>
+              <div>€75.66</div>
             </div>
 
             <div className='hz_line'></div>
@@ -55,7 +59,7 @@ function ThankYouOrder(props) {
             </div>
             <div className="supp_desc">
               <div></div>
-              <div className='fw_600'>Gesamt Preis<span className='pdl_40'>€269.94</span></div>
+              <div className='fw_600'>Gesamt Preis<span className='pdl_40'>€248.12</span></div>
             </div>
           </div>
           <div className='hz_line'></div>
