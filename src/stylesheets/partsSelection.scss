@@ -195,7 +195,6 @@ ul.accordion-list-parts-selection {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   padding-top: 5px;
-  // text-transform: capitalize;
   background-color: #fff;
   margin-left: -20px;
   border-radius: 5px;
@@ -208,6 +207,14 @@ ul.accordion-list-parts-selection {
   border-radius: 5px;
 }
 
+.vs {
+  visibility: visible;
+}
+
+.vsh {
+  visibility: hidden;
+}
+
 .cp {
   cursor: pointer;
 }
@@ -216,7 +223,6 @@ ul.accordion-list-parts-selection {
   color: black;
   padding: 7px 16px;
   text-decoration: none;
-  display: block;
   border-radius: 5px;
 }
 

@@ -9,7 +9,7 @@ function Login() {
   const [userCred, setUserCred] = useState({ userName: '', password: '' });
   const [isEye, setIsEye] = useState(false);
   const [isError, setIsError] = useState({ userName: false, password: false });
-  const userLoginDetails = { userName: 'goparts', password: 'goparts@543' };
+  const userLoginDetails = { userName: 'goparts', password: 'goparts@543&' };
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,6 +17,12 @@ function Login() {
       navigate('/dashboard');
     }
   }, []);
+
+  // window.onbeforeunload = closingCode;
+  // function closingCode(){
+  //   window.localStorage.removeItem('loginDetails');
+  //   return null;
+  // }
 
   const handleSignin = (e) => {
     e.preventDefault();

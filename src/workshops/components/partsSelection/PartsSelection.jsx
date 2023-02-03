@@ -127,14 +127,14 @@ function PartsSelection(props) {
           <div className='dropdown w_25'>
             <div className='dropbtn cp flx_dd' onClick={handleHideDD}>{ddSelectContent} <FontAwesomeIcon icon={faAngleDown} className='pdl_10' /></div>
             <div className={showDD ? 'dropdown-content' : 'dn'}>
-              <div className='ddc cp' onClick={()=>handleSetSelectDD('Günstigster Preis')}>
-                <FontAwesomeIcon icon={faCheck} className='pdl_10' /><span className='pdl_5'>Günstigster Preis</span>
+              <div className='ddc cp flx_dd' onClick={()=>handleSetSelectDD('Günstigster Preis')}>
+                <div><FontAwesomeIcon icon={faCheck} className={ddSelectContent === 'Günstigster Preis' ? 'pdl_10 vs' : 'pdl_10 vsh'} /></div><div className='pdl_5'>Günstigster Preis</div>
               </div>
-              <div className='ddc cp pdl_35' onClick={()=>handleSetSelectDD('Schnellste Lieferung')}>
-                Schnellste Lieferung
+              <div className='ddc cp flx_dd' onClick={()=>handleSetSelectDD('Schnellste Lieferung')}>
+              <div><FontAwesomeIcon icon={faCheck} className={ddSelectContent === 'Schnellste Lieferung' ? 'pdl_10 vs' : 'pdl_10 vsh'} /></div><div className='pdl_5'>Schnellste Lieferung</div>
               </div>
-              <div className='ddc cp pdl_35' onClick={()=>handleSetSelectDD('Günstigster Preis zur gewünschten Lieferung')}>
-                Günstigster Preis zur gewünschten Lieferung
+              <div className='ddc cp flx_dd' onClick={()=>handleSetSelectDD('Günstigster Preis zur gewünschten Lieferung')}>
+              <div><FontAwesomeIcon icon={faCheck} className={ ddSelectContent === 'Günstigster Preis zur gewünschten Lieferung' ? 'pdl_10 vs' : 'pdl_10 vsh'} /></div><div className='pdl_5'>Günstigster Preis zur gewünschten Lieferung</div>
               </div>
             </div>
           </div>
